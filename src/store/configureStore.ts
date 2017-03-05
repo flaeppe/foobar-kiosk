@@ -6,8 +6,11 @@ import { createStore, applyMiddleware } from "redux";
 
 import rootReducer from "reducers";
 
+import autoLogout from "middleware";
+
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware,
+    autoLogout,
     createLogger()
 )(createStore);
 
